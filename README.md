@@ -27,8 +27,8 @@ To construct the model and compose a sound story, we have collected datasets fro
 ### POI acquisition and selection
 
 1. We are using Google Map API to acquire the data, there are mainly two APIs that we used.
-   1. (Geocoding API)[https://developers.google.com/maps/documentation/geocoding/overview]
-   2. (Places API)[https://developers.google.com/maps/documentation/geocoding/overview]
+   1. [Geocoding API](https://developers.google.com/maps/documentation/geocoding/overview)
+   2. [Places API](https://developers.google.com/maps/documentation/geocoding/overview)
 2. We first use the name of the transaction location to find the latitude and longitude. Use the coordinates to acqure its surrounding POIs.
 3. We count POIs of different kind within different radius, we choose the buffer to be
    1. 500m: A walking distance
