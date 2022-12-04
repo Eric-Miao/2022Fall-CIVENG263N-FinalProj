@@ -1,35 +1,83 @@
 # CIVENG263N_Projects
- This is the final project for Berkeley course CIVENG 263N in Fall 2022
 
-## Progress
+This is the final project for Berkeley course CIVENG 263N in Fall 2022.  
+We have Eric Miao, Morris Chang and Ibtihal Alshehri
 
-### Data Collection
-1. Decide the target city.  
-   - **Taipei**
-2. Fetech the real-estate data.   
-   - **Thanks to the government, they published the data**
-   - 41,000 entries
+## Background
 
-### Data Preprocessing
-1. Google Map API to query for the geocoding information based on the text address of each real-estate.
-2. Google Map API to query for surrounding POI infos (13 types of POI)
-   - Only got 4000 entries' POI info because the Google API is not affordable for our course project.
-   - Tend to OpenStreetMap for more info, overpass API.
+Taipei, similar to all the other compact cities in east Asian, holds a great amount of population and thus have an insane house price.  
+Among the factors that affect the price of a house, besides its original properties, for exmaple the size, the layout and its condition, the environment around it is of vital importance.  
+But how could we describe a house and its surroundings statistically?
+**We decide to use POIs (Points Of Interest) to construct a model to predict the house price.**
 
-### Regression Model
-1. Use the POI data and real-estate properties to predict on housing price.
+## Dataset
 
-### Radiation Model on sub-district flows
-1. Use the population (flows if possible, more directly to generate) and the radiation model to 
-generate the flows between each sub-district in Taipei.
-2. With the flow data, we can come up with a model to describe the importance (weight) of a certain 
-area, and corelate that to the housing price.
-   - Can be that the more connected/centered the area, the higher the price.
+To construct the model and compose a sound story, we have collected datasets from all aspects.
 
-### Community detection
-1. Based on the flow data, or more directly the connections of bus_stations/subway_stations and the data
-we can regenerate the airport project.
+1. [The transaction data in Taipei in the past 3 years (2019-2022)](https://plvr.land.moi.gov.tw/DownloadOpenData)
+2. [The POIs arround each transaction (details below)](https://mapsplatform.google.com/?utm_source=search&utm_medium=googleads&utm_campaign=brand_core_exa_desk_mobile_us&gclid=CjwKCAiAhKycBhAQEiwAgf19egUZrNFQEEPbm2ZlpGah4Hu9IFpB9-jpCCLATsPMplqB6V5XGlAChRoCv-EQAvD_BwE&gclsrc=aw.ds)
+3. [District and Sub-district geographical information](https://data.gov.tw/dataset/7438)
+4. [Population Distribution](https://ca.gov.taipei/News_Content.aspx?n=8693DC9620A1AABF&sms=D19E9582624D83CB&s=EE7D5719108F4026)
+5. [Income distribution](https://data.gov.tw/en/datasets/103066)
+6. [Education distribution](https://data.gov.tw/en/datasets/8409)
+7. [Daytime/Nighttime population flow](https://segis.moi.gov.tw/)
+8. [Age Distribution](https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzM1L3JlbGZpbGUvMTYxNTUvODM1MjYzNS8yNzkzNjQ0ZS0zMjU3LTRmZDUtOWQ1Mi0zYTVkM2E0MmEyNWIucGRm&n=MjAyMC1hZ2UucGRm&icon=.pdf)
+9. etc.
 
-## Results
+### POI acquisition and selection
 
-## Report
+1. We are using Google Map API to acquire the data, there are mainly two APIs that we used.
+   1. (Geocoding API)[https://developers.google.com/maps/documentation/geocoding/overview]
+   2. (Places API)[https://developers.google.com/maps/documentation/geocoding/overview]
+2. We first use the name of the transaction location to find the latitude and longitude. Use the coordinates to acqure its surrounding POIs.
+3. We count POIs of different kind within different radius, we choose the buffer to be
+   1. 500m: A walking distance
+   2. 1000m: A public transportation distance/ A scooter distance
+   3. 3000m: A private transportation distance
+4. We choose a list of POI to count
+   - Subway Station
+   - Bus Station
+   - Police Station
+   - Hospital
+   - Supermarket
+   - Library
+   - University
+   - Primary School
+   - Church
+   - Nightclub
+   - Shopping Mall
+   - Park
+5. **\*Cautious! Google API can be costful**
+
+## Analysis
+
+### Cluster
+
+We are doing clusters with following combinations
+
+1. 500m POI
+2. 1000m POI
+3. 3000m POI
+4. 1,2,3 + Unit Price of Transaction ($NTD/m^2$)
+5. House Properties
+6. House Properties + Unit Price of Transaction ($NTD/m^2$)
+
+### Linear Regression
+
+We are conducting linear regression with following combinations
+
+1. All POIs v.s. Unit Price
+2. 500m POI v.s. Unit Price
+3. 1000m POI v.s. Unit Price
+4. 3000m POI v.s. Unit Price
+5. House Peroperties v.s. Unit Price
+
+### Socioeconomic Factors
+
+We are considering the following factors in affecting house price
+
+1. Education distribution of different level in different sub-district in Taipei
+2. Income distribution of ttl/avg/median income in different sub-district in Taipei
+3. Population in each district in daytime and nighttime in weekday/weekend in Taipei
+
+## Repo Structure
