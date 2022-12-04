@@ -81,3 +81,31 @@ We are considering the following factors in affecting house price
 3. Population in each district in daytime and nighttime in weekday/weekend in Taipei
 
 ## Repo Structure
+
+Below is the repository tree of the project
+
+- README.md
+- Final\_Proj\_Eric.ipynb
+  > This is main code from Eric.
+- Final\_project\_Morris.ipynb
+  > This is the main code from Morris.
+- socioSHAPES.zip
+  > This is the ArcGIS project from Ibtihal.
+- LICENSE
+- Output\_CSV/
+  > This folder contains the numeric outputs in the form of CSV.
+- Raw\_data/
+  > This folder contains the raw data used in the project.
+  - 01Transaction/
+    > This is the folder of transaction raw data
+  - 02POI/
+    > This is the folder of POIs we have queried from Google API and their processed versions
+  - 03Census/
+    > This is the folder of Census data: education, income, population flow data.
+  - 04Geographic_data/
+    > This is the folder of shapefile of Taiwan districts and sub-districts.
+- Figures/
+  > This folder contains figures generated from the code.
+
+## Results
+Please refer to the final presentation.
