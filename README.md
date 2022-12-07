@@ -106,6 +106,8 @@ Below is the repository tree of the project
     > This is the folder of shapefile of Taiwan districts and sub-districts.
 - Figures/
   > This folder contains figures generated from the code.
+- Report/
+  > This folder contains both the presentation slides and the final report.
 
 ## Results
-Please refer to the final presentation.
+Refer to the folder [Report](https://github.com/Eric-Miao/2022Fall-CIVENG263N-FinalProj/tree/main/Report)
