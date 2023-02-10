@@ -1,8 +1,7 @@
-# CIVENG263N_Projects
+# Predicting RESIDENTIAL REAL ESTATE in Taipei,Taiwan with Cluster, Regression and Visualization
 
-This is the final project for Berkeley course CIVENG 263N in Fall 2022.  
-We have Eric Miao, Morris Chang and Ibtihal Alshehri
-
+This is my self designed project to make prediction on the residential real estate price in Taipei Taiwan.  
+The major techniques involved in the project including **PCA, K-means, Multivariate Regression, Human Mobility, Network Connectivity**, etc.
 ## Background
 
 Taipei, similar to all the other compact cities in east Asian, holds a great amount of population and thus have an insane house price.  
@@ -85,12 +84,12 @@ We are considering the following factors in affecting house price
 Below is the repository tree of the project
 
 - README.md
-- Final\_Proj\_Eric.ipynb
-  > This is main code from Eric.
-- Final\_project\_Morris.ipynb
-  > This is the main code from Morris.
+- Final\_DataClean\_Regression.ipynb
+  > This is main code of Data Clearance, PCA, Human Mobility, Network Connectivity and Multivariate Regression.
+- Final\_Cluster\_Visualization.ipynb
+  > This is the main code from K-means Clustering, Map Visualization.
 - socioSHAPES.zip
-  > This is the ArcGIS project from Ibtihal.
+  > This is the ArcGIS project for network connectivity and other geographical analysis.
 - LICENSE
 - Output\_CSV/
   > This folder contains the numeric outputs in the form of CSV.
