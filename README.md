@@ -1,9 +1,9 @@
-# Predicting RESIDENTIAL REAL ESTATE in Taipei,Taiwan with Cluster, Regression and Visualization
+# Predicting RESIDENTIAL REAL ESTATE in Taipei,Taiwan
 
 This is my self designed project to make prediction on the residential real estate price in Taipei Taiwan.  
 The major techniques involved in the project including **PCA, K-means, Multivariate Regression, Human Mobility, Network Connectivity**, etc.
 
-![](./Report/ProjectTitle.png.png)
+![](./Report/ProjectTitle.png)
 
 ## Background
 
