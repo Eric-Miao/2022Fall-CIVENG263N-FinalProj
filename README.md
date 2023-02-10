@@ -2,6 +2,9 @@
 
 This is my self designed project to make prediction on the residential real estate price in Taipei Taiwan.  
 The major techniques involved in the project including **PCA, K-means, Multivariate Regression, Human Mobility, Network Connectivity**, etc.
+
+![](./Report/ProjectTitle.png.png)
+
 ## Background
 
 Taipei, similar to all the other compact cities in east Asian, holds a great amount of population and thus have an insane house price.  
